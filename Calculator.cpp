@@ -18,7 +18,7 @@ int main(){
       //cout<<"Enter the time until which you want to know information: ";
       //cin>>stop_time;
       int sec_left, min_left, h_left, count=1000;
-      int q = 1;
+      int q = 0;
       while(count>0){
             sec_left=(starting_time_sec+r)/60;
             starting_time_sec=(starting_time_sec+r)%60;
@@ -57,7 +57,7 @@ int main(){
       } */
 
       std::ofstream out("Data of green light.csv");
-
+      out<<"Hours"<<","<<"Min"<<","<<"Sec"<<"\n";
       for (auto& row : green) {
             for (auto col : row){
                   out << col <<',';
@@ -67,6 +67,7 @@ int main(){
       }
 
       std::ofstream wout("Data of red light.csv");
+      wout<<"Hours"<<","<<"Min"<<","<<"Sec"<<"\n";
       for (auto& row : red) {
             for (auto col : row){
                   wout << col <<',';
@@ -76,6 +77,7 @@ int main(){
       }
 
       std::ofstream qout("Data of yellow light.csv");
+      qout<<"Hours"<<","<<"Min"<<","<<"Sec"<<"\n";
       for (auto& row : yellow) {
             for (auto col : row){
                   qout << col <<',';
